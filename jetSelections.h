@@ -1,6 +1,6 @@
 // -*- C++ -*-
 
-// $Id: jetSelections.h,v 1.5 2010/07/09 12:21:00 jmuelmen Exp $
+// $Id: jetSelections.h,v 1.6 2010/07/13 09:07:43 jmuelmen Exp $
 
 #ifndef JETSELECTIONS_H
 #define JETSELECTIONS_H
@@ -77,4 +77,5 @@ double jetCorrection (const LorentzVector &jet,
 void setJetCorrector (FactorizedJetCorrector *);
 double jetCorrection (const LorentzVector &jet);
 double jetCorrection (int ijet);
+bool jetPassesLooseJetID(int ijet);
 #endif // SEL_JETS_H
