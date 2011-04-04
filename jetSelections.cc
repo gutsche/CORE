@@ -1,4 +1,4 @@
-// $Id: jetSelections.cc,v 1.13 2010/10/21 18:50:07 fgolf Exp $
+// $Id: jetSelections.cc,v 1.14 2010/10/21 21:06:56 fgolf Exp $
 
 #include <algorithm>
 #include <utility>
@@ -239,11 +239,11 @@ class FactorizedJetCorrector *makeJetCorrector (const std::vector<std::string> &
      return new FactorizedJetCorrector(vParam);
 }
 
-double jetCorrection (const LorentzVector &jet, FactorizedJetCorrector *jetCorrector)
+double jetCorrection (const LorentzVector &jet, FactorizedJetCorrector *jc)
 {
-     jetCorrector->setJetPt(jet.pt());
-     jetCorrector->setJetEta(jet.eta());
-     return jetCorrector->getCorrection();
+     jc->setJetPt(jet.pt());
+     jc->setJetEta(jet.eta());
+     return jc->getCorrection();
 }
 
 double jetCorrection (const LorentzVector &jet)
