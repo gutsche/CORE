@@ -1,6 +1,6 @@
 // -*- C++ -*-
 
-// $Id: jetSelections.h,v 1.12 2011/05/13 15:21:17 cerati Exp $
+// $Id: jetSelections.h,v 1.13 2011/10/24 09:57:51 cerati Exp $
 
 #ifndef JETSELECTIONS_H
 #define JETSELECTIONS_H
@@ -29,6 +29,7 @@ enum CleaningType {
      JETS_CLEAN_HYP_E,			// e only from hypothesis
      JETS_CLEAN_SINGLE_E,		// e in single-lepton final state (QCD)
      JETS_CLEAN_SINGLE_MU,      // mu in single-lepton final state (QCD)
+     JETS_CLEAN_SS_E_MU         // mu in single-lepton final state (QCD)
 };
 
 #define JET_DEFAULT_TYPE 	JETS_TYPE_JPT
