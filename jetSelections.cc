@@ -85,36 +85,28 @@ static jets_with_corr_t getJets_fast (unsigned int i_hyp, enum JetType type, enu
             break;
         case JETS_CLEAN_HYP_E_MU:
         {
-            if (i_hyp > - 1) {
-                const LorentzVector &lt = cms2.hyp_lt_p4().at(i_hyp);
-                if (ROOT::Math::VectorUtil::DeltaR(jets->at(i), lt) < deltaR)
-                    goto conti;
-                const LorentzVector &ll = cms2.hyp_ll_p4().at(i_hyp);
-                if (ROOT::Math::VectorUtil::DeltaR(jets->at(i), ll) < deltaR)
-                    goto conti;
-                break;
-            }
-            else
-                break;
+            const LorentzVector &lt = cms2.hyp_lt_p4().at(i_hyp);
+            if (ROOT::Math::VectorUtil::DeltaR(jets->at(i), lt) < deltaR)
+                goto conti;
+            const LorentzVector &ll = cms2.hyp_ll_p4().at(i_hyp);
+            if (ROOT::Math::VectorUtil::DeltaR(jets->at(i), ll) < deltaR)
+                goto conti;
+            break;
         }
         case JETS_CLEAN_HYP_E:
         {
-            if (i_hyp > -1) {
-                const LorentzVector &lt = cms2.hyp_lt_p4().at(i_hyp);
-                const int lt_id = cms2.hyp_lt_id().at(i_hyp);
-                if (abs(lt_id) == 11 && ROOT::Math::VectorUtil::DeltaR(jets->at(i), lt) < deltaR)
-                    goto conti;
-                const LorentzVector &ll = cms2.hyp_ll_p4().at(i_hyp);
-                const int ll_id = cms2.hyp_ll_id().at(i_hyp);
-                if (abs(ll_id) == 11 && ROOT::Math::VectorUtil::DeltaR(jets->at(i), ll) < deltaR)
-                    goto conti;
-                break;
-            }
-            else
-                break;
+            const LorentzVector &lt = cms2.hyp_lt_p4().at(i_hyp);
+            const int lt_id = cms2.hyp_lt_id().at(i_hyp);
+            if (abs(lt_id) == 11 && ROOT::Math::VectorUtil::DeltaR(jets->at(i), lt) < deltaR)
+                goto conti;
+            const LorentzVector &ll = cms2.hyp_ll_p4().at(i_hyp);
+            const int ll_id = cms2.hyp_ll_id().at(i_hyp);
+            if (abs(ll_id) == 11 && ROOT::Math::VectorUtil::DeltaR(jets->at(i), ll) < deltaR)
+                goto conti;
+            break;
         }
         case JETS_CLEAN_SINGLE_E:
-        {            
+        {
             const LorentzVector &e = cms2.els_p4().at(i_hyp);
             if (ROOT::Math::VectorUtil::DeltaR(jets->at(i), e) < deltaR)
                 goto conti;
