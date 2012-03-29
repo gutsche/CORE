@@ -1,4 +1,4 @@
-// $Id: jetSelections.cc,v 1.24 2012/02/08 21:03:53 fgolf Exp $
+// $Id: jetSelections.cc,v 1.26 2012/03/22 04:00:33 fgolf Exp $
 
 #include <algorithm>
 #include <utility>
@@ -8,6 +8,8 @@
 #include "jetcorr/JetCorrectorParameters.icc"
 #include "jetcorr/FactorizedJetCorrector.icc"
 #include "jetcorr/SimpleJetCorrector.icc"
+#include "jetcorr/JetCorrectionUncertainty.icc"
+#include "jetcorr/SimpleJetCorrectionUncertainty.icc"
 #include "utilities.h"
 
 using std::vector;
