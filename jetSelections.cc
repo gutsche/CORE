@@ -1,4 +1,4 @@
-// $Id: jetSelections.cc,v 1.32 2012/06/14 21:20:45 kelley Exp $
+// $Id: jetSelections.cc,v 1.33 2012/08/06 11:28:41 benhoob Exp $
 
 #include <algorithm>
 #include <utility>
@@ -464,7 +464,7 @@ float jetDz(int ijet, int ivtx) {
     else return 99999.;
 }
 
-float jet_beta(int ijet, int power , float dzcut , int ivtx , bool verbose ) {
+float pfjet_beta(int ijet, int power , float dzcut , int ivtx , bool verbose ) {
 
   //---------------------------------------------------------------------------------
   // cands is the vector of PFCandidate indices matched to the pfjet with index ijet
