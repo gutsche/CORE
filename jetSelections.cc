@@ -1,4 +1,4 @@
-// $Id: jetSelections.cc,v 1.38 2012/11/30 16:38:51 vimartin Exp $
+// $Id: jetSelections.cc,v 1.39 2013/01/19 20:48:44 benhoob Exp $
 
 #include <algorithm>
 #include <utility>
@@ -487,7 +487,7 @@ float pfjet_beta(int ijet, int power , float dzcut , int ivtx , bool verbose ) {
 
     int ican = cands[ivc];
 
-    if( ican > cms2.pfcands_charge().size() ){
+    if( ican > static_cast<int>(cms2.pfcands_charge().size()) ){
       cout << __FILE__ << " " << __LINE__ << " ERROR! ican, numCandidates " << ican << ", " << cms2.pfcands_charge().size() << endl;
       return -3.0;
     }
