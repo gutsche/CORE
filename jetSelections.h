@@ -1,6 +1,6 @@
 // -*- C++ -*-
 
-// $Id: jetSelections.h,v 1.23 2012/08/06 11:29:58 benhoob Exp $
+// $Id: jetSelections.h,v 1.24 2012/08/25 00:32:31 fgolf Exp $
 
 #ifndef JETSELECTIONS_H
 #define JETSELECTIONS_H
@@ -160,6 +160,8 @@ int nBtaggedJets (unsigned int i_hyp,  // hyp or single-e to use for cleaning
 // the jet met systematic...see the cc file for details
 float getJetMetSyst(int flag, float pt, float eta);
 
+
+std::vector<float> getJetBtagDiscriminators(enum BtagType btag_type, enum JetType jet_type = JETS_TYPE_PF_FAST_CORR);
 
 // this function calculates the fraction of the pt of charged particles in a jet associated to the vertex ivtx
 float pfjet_beta(int ijet, int power = 1, float dzcut = 0.05 , int ivtx = 0, bool verbose = false );
